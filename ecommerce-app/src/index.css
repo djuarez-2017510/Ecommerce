@@ -1,0 +1,266 @@
+/* === RESET Y BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: #f8f9fa;
+  color: #222;
+}
+
+/* === LAYOUT GENERAL === */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* === HEADER === */
+header {
+  background-color: #111;
+  padding: 1rem;
+  color: white;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #ddd;
+  padding: 1rem;
+  text-align: center;
+  color: #333;
+  margin-top: auto;
+}
+
+/* === HOME === */
+main h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* === PRODUCT GRID === */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* === PRODUCT CARD === */
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  background: white;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.product-card button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #ff6f00;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.product-card button:hover {
+  background-color: #e65c00;
+}
+
+/* === CART ITEM === */
+.cart-item {
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.cart-item button {
+  background-color: #ff6f00;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin: 0 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cart-item button:hover {
+  background-color: #e65c00;
+}
+
+/* Botones generales en el main (comprar, vaciar, etc.) */
+main button {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+main button:hover {
+  background-color: #333;
+}
+
+/* === MODAL === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Cantidad selector en modal */
+.modal-content .cantidad-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.modal-content .cantidad-control button {
+  background-color: #111;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.3rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-content .cantidad-control span {
+  font-size: 1.2rem;
+}
+
+/* Botones del modal */
+.modal-content button {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-content button:nth-of-type(1) {
+  background-color: #ff6f00;
+  color: white;
+}
+
+.modal-content button:nth-of-type(1):hover {
+  background-color: #e65c00;
+}
+
+.modal-content button:nth-of-type(2) {
+  background-color: #ccc;
+  color: #222;
+}
+
+.modal-content button:nth-of-type(2):hover {
+  background-color: #aaa;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  margin-top: 2rem;
+}
+
+.carousel img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.category {
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 300px;
+}
+
+.category img {
+  width: 100%;
+  display: block;
+}
+
+.category p {
+  padding: 1rem;
+  font-weight: bold;
+}
