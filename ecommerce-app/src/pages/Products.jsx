@@ -1,32 +1,30 @@
 import { useState } from "react";
+import products from "../data/productsData";
 import ProductCard from "../components/ProductCard";
+import ProductModal from "../components/ProductModal";
 
 function Products() {
-  const [carrito, setCarrito] = useState([]);
-
-  const productosFake = [
-    {
-      nombre: 'Botas Fox MX',
-      descripcion: 'Botas resistentes para motocross',
-      precio: '$150',
-      img: 'https://via.placeholder.com/150',
-    },
-    // ...otros productos
-  ];
-
-  const agregarAlCarrito = (productoNuevo) => {
-    setCarrito([...carrito, productoNuevo]);
-    console.log("Carrito:", [...carrito, productoNuevo]); // debug
-  };
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
     <main>
-      <h2>Productos disponibles</h2>
-      <div className="product-grid">
-        {productosFake.map((p, i) => (
-          <ProductCard key={i} producto={p} onAdd={agregarAlCarrito} />
+      <h2>Productos</h2>
+      <div className="grid">
+        {products.map((prod) => (
+          <ProductCard
+            key={prod.id}
+            product={prod}
+            onInfo={() => setSelectedProduct(prod)}
+          />
         ))}
       </div>
+
+      {selectedProduct && (
+        <ProductModal
+          producto={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </main>
   );
 }

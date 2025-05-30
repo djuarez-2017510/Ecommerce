@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <main>
@@ -7,46 +8,26 @@ function Home() {
       </section>
 
       <section className="carousel">
-        <img
-          src="https://via.placeholder.com/800x300?text=Fox+Promo+1"
-          alt="Promo 1"
-        />
-        <img
-          src="https://via.placeholder.com/800x300?text=Fox+Promo+2"
-          alt="Promo 2"
-        />
-        <img
-          src="https://via.placeholder.com/800x300?text=Fox+Promo+3"
-          alt="Promo 3"
-        />
+        <img src="/img/promo1.JPG" alt="Promo 1" />
+        <img src="/img/promo2.JPG" alt="Promo 2" />
+        <img src="/img/promo3.JPG" alt="Promo 3" />
       </section>
 
-      {/* Categorías como vista previa visual */}
       <section className="categories">
-        <div className="category">
-          <img
-            src="https://via.placeholder.com/300x200?text=MX+Boots"
-            alt="MX Boots"
-          />
-          <p>MXBoots</p>
-        </div>
-        <div className="category">
-          <img
-            src="https://via.placeholder.com/300x200?text=FanWear"
-            alt="FanWear"
-          />
+        <Link to="/products" className="category">
+          <img src="/img/cascoHome.JPG" alt="Moto Helmet" />
+          <p>Moto Helmet</p>
+        </Link>
+        <Link to="/products" className="category">
+          <img src="/img/fanwear.JPG" alt="FanWear" />
           <p>FanWear</p>
-        </div>
-        <div className="category">
-          <img
-            src="https://via.placeholder.com/300x200?text=Accessories"
-            alt="Accessories"
-          />
+        </Link>
+        <Link to="/products" className="category">
+          <img src="/img/suscription.JPG" alt="Accessories" />
           <p>Accesorios</p>
-        </div>
+        </Link>
       </section>
     </main>
   );
 }
-
 export default Home;

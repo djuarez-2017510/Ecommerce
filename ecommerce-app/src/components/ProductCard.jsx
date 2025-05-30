@@ -1,25 +1,12 @@
-import { useState } from "react";
-import ProductModal from "./ProductModal";
-
-function ProductCard({ producto, onAdd }) {
-  const [mostrarModal, setMostrarModal] = useState(false);
-
+function ProductCard({ product, onInfo }) {
   return (
-    <div className="product-card">
-      <img src={producto.img} alt={producto.nombre} />
-      <p>{producto.nombre}</p>
-      <p>{producto.precio}</p>
-      <button onClick={() => setMostrarModal(true)}>Info</button>
-
-      {mostrarModal && (
-        <ProductModal
-          producto={producto}
-          onClose={() => setMostrarModal(false)}
-          onAdd={onAdd}
-        />
-      )}
+    <div className="card">
+      <img src={product.image} alt={product.name} className="product-img" />
+      <h3>{product.name}</h3>
+      <p>${product.price.toFixed(2)}</p>
+      <button onClick={onInfo}>Ver info</button>
     </div>
   );
 }
 
-export default ProductCard;
+export default ProductCard; 

@@ -56,170 +56,7 @@ footer {
   margin-top: auto;
 }
 
-/* === HOME === */
-main h2 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-/* === PRODUCT GRID === */
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-/* === PRODUCT CARD === */
-.product-card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 1rem;
-  background: white;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.product-card img {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.product-card button {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #ff6f00;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.product-card button:hover {
-  background-color: #e65c00;
-}
-
-/* === CART ITEM === */
-.cart-item {
-  background-color: white;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-}
-
-.cart-item button {
-  background-color: #ff6f00;
-  color: white;
-  border: none;
-  padding: 0.4rem 0.9rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  margin: 0 0.3rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.cart-item button:hover {
-  background-color: #e65c00;
-}
-
-/* Botones generales en el main (comprar, vaciar, etc.) */
-main button {
-  background-color: #111;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  margin-top: 1rem;
-  margin-right: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-main button:hover {
-  background-color: #333;
-}
-
-/* === MODAL === */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-}
-
-.modal-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-/* Cantidad selector en modal */
-.modal-content .cantidad-control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-  gap: 1rem;
-}
-
-.modal-content .cantidad-control button {
-  background-color: #111;
-  color: white;
-  font-size: 1.2rem;
-  padding: 0.3rem 0.9rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.modal-content .cantidad-control span {
-  font-size: 1.2rem;
-}
-
-/* Botones del modal */
-.modal-content button {
-  margin-top: 1rem;
-  margin-right: 0.5rem;
-  padding: 0.5rem 1.2rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.modal-content button:nth-of-type(1) {
-  background-color: #ff6f00;
-  color: white;
-}
-
-.modal-content button:nth-of-type(1):hover {
-  background-color: #e65c00;
-}
-
-.modal-content button:nth-of-type(2) {
-  background-color: #ccc;
-  color: #222;
-}
-
-.modal-content button:nth-of-type(2):hover {
-  background-color: #aaa;
-}
-
+/* === HOME: CATEGORÍAS Y CARRUSEL === */
 .carousel {
   display: flex;
   overflow-x: auto;
@@ -236,7 +73,6 @@ main button:hover {
   scroll-snap-align: center;
   flex-shrink: 0;
 }
-
 
 .categories {
   display: flex;
@@ -263,4 +99,260 @@ main button:hover {
 .category p {
   padding: 1rem;
   font-weight: bold;
+}
+
+/* === PRODUCT GRID === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* === PRODUCT CARD === */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.card h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  color: #444;
+  margin: 0.5rem 0;
+}
+
+.card button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #111;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.card button:hover {
+  background-color: #333;
+}
+
+/* === MODAL === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.modal img {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.modal h3 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.modal p {
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+/* === CONTROLES DEL MODAL === */
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.cantidad-control button {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.modal-buttons button {
+  padding: 0.7rem 1.5rem;
+  background-color: #111;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-buttons button:hover {
+  background-color: #333;
+}
+
+/* === VISTA CARRITO === */
+.cart-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.cart-page h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* === ITEM EN EL CARRITO === */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  gap: 2rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  flex-wrap: wrap;
+}
+
+.cart-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.cart-info h4 {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.cart-info p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+/* === CONTROL DE CANTIDAD === */
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.cantidad-control button {
+  background-color: #111;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cantidad-control button:hover {
+  background-color: #333;
+}
+
+/* === BOTÓN ELIMINAR === */
+.eliminar-btn {
+  background-color: #d32f2f;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.eliminar-btn:hover {
+  background-color: #b71c1c;
+}
+
+/* === TOTAL Y ACCIONES === */
+.subtotal {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.cart-actions button {
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  background-color: #ff6f00;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cart-actions button:hover {
+  background-color: #e65c00;
 }
