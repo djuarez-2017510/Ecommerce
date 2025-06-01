@@ -1,7 +1,7 @@
 import { useCart } from "../hooks/CartContext";
 
 function CartItem({ item }) {
-  const { addToCart, removeFromCart, updateCantidad } = useCart();
+  const { updateCantidad, removeFromCart } = useCart();
 
   const aumentar = () => {
     if (item.cantidad < 9) {
@@ -19,7 +19,7 @@ function CartItem({ item }) {
 
   return (
     <div className="cart-item">
-      <img src={item.image} alt={item.name} className="cart-img" />
+      <img className="cart-img" src={item.image} alt={item.name} />
       <div className="cart-info">
         <h4>{item.name}</h4>
         <p>Precio unitario: ${item.price}</p>
@@ -28,11 +28,9 @@ function CartItem({ item }) {
           <span>{item.cantidad}</span>
           <button onClick={aumentar}>+</button>
         </div>
-        <p><strong>Total:</strong> ${item.price * item.cantidad}</p>
+        <p><strong>Total:</strong> ${(item.price * item.cantidad).toFixed(2)}</p>
       </div>
-      <button onClick={() => removeFromCart(item.id)} className="eliminar-btn">
-        Eliminar
-      </button>
+      <button className="eliminar-btn" onClick={() => removeFromCart(item.id)}>Eliminar</button>
     </div>
   );
 }
